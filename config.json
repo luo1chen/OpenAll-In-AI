@@ -1,0 +1,62 @@
+{
+  "server": {
+    "host": "0.0.0.0",
+    "port": 8000,
+    "reload": false,
+    "log_level": "info"
+  },
+  "database": {
+    "url": "sqlite+aiosqlite:///./data/openall.db",
+    "echo": false
+  },
+  "models": {
+    "cache_dir": "./models",
+    "default_model": "qwen2.5-7b",
+    "auto_download": true,
+    "max_memory": {
+      "cpu": "8GB",
+      "gpu": "4GB"
+    }
+  },
+  "apis": {
+    "openai": {
+      "enabled": false,
+      "base_url": "https://api.openai.com/v1",
+      "api_key": "",
+      "default_model": "gpt-3.5-turbo"
+    },
+    "dashscope": {
+      "enabled": false,
+      "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+      "api_key": "",
+      "default_model": "qwen-turbo"
+    },
+    "spark": {
+      "enabled": false,
+      "app_id": "",
+      "api_key": "",
+      "api_secret": "",
+      "default_model": "generalv3"
+    },
+    "deepseek": {
+      "enabled": false,
+      "base_url": "https://api.deepseek.com/v1",
+      "api_key": "",
+      "default_model": "deepseek-chat"
+    }
+  },
+  "plugins": {
+    "enabled": true,
+    "market_url": "https://plugins.openall.ai",
+    "auto_update": false
+  },
+  "media": {
+    "temp_dir": "./data/temp",
+    "max_file_size": "100MB",
+    "allowed_extensions": [".jpg", ".jpeg", ".png", ".mp3", ".wav", ".mp4", ".avi", ".pdf"]
+  },
+  "security": {
+    "secret_key": "change-me-in-production",
+    "access_token_expire_minutes": 1440
+  }
+}
