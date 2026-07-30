@@ -138,15 +138,18 @@ docker run -p 8000:8000 openall-in-ai
 
 ## 📸 Screenshots
 
-> *Screenshots will be added in upcoming releases. Stay tuned!*
+### 🏠 Home Dashboard
+![Home](docs/screenshots/home.png)
+
+### 📱 Feature Modules
 
 | Chat Interface | Image Generation | PDF Tools |
 |:---:|:---:|:---:|
-| <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Screenshot%20of%20a%20modern%20AI%20chat%20interface%20with%20dark%20theme%2C%20showing%20conversation%20between%20user%20and%20AI%20assistant%2C%20code%20highlighting%2C%20markdown%20rendering&image_size=landscape_16_9" width="300"/> | <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Screenshot%20of%20AI%20image%20generation%20interface%20with%20prompt%20input%2C%20style%20options%2C%20and%20generated%20images%20gallery&image_size=landscape_16_9" width="300"/> | <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Screenshot%20of%20PDF%20toolkit%20interface%20showing%20split%2C%20merge%2C%20encrypt%2C%20summarize%20options&image_size=landscape_16_9" width="300"/> |
+| ![Chat](docs/screenshots/chat.png) | ![Image](docs/screenshots/image.png) | ![PDF](docs/screenshots/pdf.png) |
 
 | Code Assistant | Plugin Marketplace | Settings |
 |:---:|:---:|:---:|
-| <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Screenshot%20of%20AI%20code%20assistant%20with%20syntax%20highlighted%20code%2C%20suggestions%2C%20and%20debug%20panel&image_size=landscape_16_9" width="300"/> | <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Screenshot%20of%20plugin%20marketplace%20with%20grid%20of%20plugin%20cards%2C%20install%20buttons%2C%20and%20ratings&image_size=landscape_16_9" width="300"/> | <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Screenshot%20of%20settings%20page%20with%20API%20configuration%2C%20model%20management%2C%20and%20theme%20options&image_size=landscape_16_9" width="300"/> |
+| ![Code](docs/screenshots/code.png) | ![Plugins](docs/screenshots/plugins.png) | ![Settings](docs/screenshots/settings.png) |
 
 ---
 
