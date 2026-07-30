@@ -1,7 +1,7 @@
 """
 Database models for OpenAll-In-AI
 """
-from sqlalchemy import Column, String, Text, DateTime, Boolean, Float
+from sqlalchemy import Boolean, Column, DateTime, Float, String, Text
 from sqlalchemy.sql import func
 
 from backend.core.database import Base

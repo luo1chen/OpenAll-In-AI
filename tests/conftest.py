@@ -1,13 +1,14 @@
 """
 Test configuration and fixtures
 """
-import pytest
 import asyncio
-from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession, async_sessionmaker
+
+import pytest
+from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker, create_async_engine
 from sqlalchemy.pool import StaticPool
 
-from backend.core.database import Base
 import backend.models  # noqa: F401 - Import models to register with Base.metadata
+from backend.core.database import Base
 
 
 @pytest.fixture(scope="session")

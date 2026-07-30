@@ -2,7 +2,7 @@
 Media service for multimedia processing
 """
 import uuid
-from typing import Optional, Dict, Any
+from typing import Any, Dict, Optional
 
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession

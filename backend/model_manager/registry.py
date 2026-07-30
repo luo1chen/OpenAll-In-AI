@@ -2,7 +2,7 @@
 Model registry for managing available models
 """
 from pathlib import Path
-from typing import List, Dict, Any, Optional
+from typing import Any, Dict, List, Optional
 
 from backend.core.config import settings
 

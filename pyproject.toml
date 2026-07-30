@@ -1,0 +1,41 @@
+[tool.ruff]
+line-length = 100
+target-version = "py39"
+
+[tool.ruff.lint]
+select = [
+    "E", "F", "W", "F4", "F841", "F901",
+    "I", "N", "UP", "B", "SIM", "RUF",
+]
+ignore = [
+    "E501",       # line too long
+    "F401",       # imported but unused
+    "F841",       # local variable assigned but never used
+    "B008",       # Do not perform function call in argument defaults (FastAPI pattern)
+    "UP035",      # deprecated typing imports (will handle gradually)
+    "UP006",      # Use modern types (will handle gradually)
+    "UP015",      # unnecessary mode argument
+    "UP011",      # unnecessary parentheses
+    "RUF100",     # unused noqa directive
+    "RUF006",     # asyncio.create_task reference
+    "RUF010",     # explicit conversion flag
+    "RUF012",     # mutable class attributes
+    "SIM118",     # key in dict.keys()
+    "W293",       # blank line contains whitespace
+    "W292",       # no newline at end of file
+]
+
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = ["F401", "F403"]
+"conftest.py" = ["F401"]
+
+[tool.mypy]
+python_version = "3.9"
+warn_return_any = true
+warn_unused_configs = true
+ignore_missing_imports = true
+disallow_untyped_defs = false
+
+[[tool.mypy.overrides]]
+module = ["*"]
+ignore_missing_imports = true

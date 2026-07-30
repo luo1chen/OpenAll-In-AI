@@ -3,14 +3,14 @@ Chat service for AI conversation
 """
 import uuid
 from datetime import datetime
-from typing import Optional, List, Tuple
+from typing import List, Optional, Tuple
 
-from sqlalchemy import select, delete
+from sqlalchemy import delete, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from backend.models import ChatSession, ChatMessage
 from backend.core.config import settings
 from backend.model_manager.inference import ModelInference
+from backend.models import ChatMessage, ChatSession
 
 
 class ChatService:

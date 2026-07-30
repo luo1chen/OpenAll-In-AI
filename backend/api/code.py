@@ -1,10 +1,11 @@
 """
 Code helper API endpoints
 """
+from typing import Dict, List, Optional
+
 from fastapi import APIRouter, Depends
-from sqlalchemy.ext.asyncio import AsyncSession
 from pydantic import BaseModel
-from typing import Optional, List, Dict
+from sqlalchemy.ext.asyncio import AsyncSession
 
 from backend.core.database import get_db
 from backend.services.code_service import CodeService

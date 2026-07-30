@@ -1,9 +1,10 @@
 """
 Plugins API endpoints
 """
-from fastapi import APIRouter, HTTPException, Depends
+from typing import List, Optional
+
+from fastapi import APIRouter, Depends, HTTPException
 from pydantic import BaseModel
-from typing import Optional, List
 
 from backend.plugins.loader import PluginLoader
 

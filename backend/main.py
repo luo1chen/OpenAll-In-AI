@@ -2,18 +2,19 @@
 OpenAll-In-AI Backend Application
 FastAPI application entry point with comprehensive API documentation
 """
+import os
+from contextlib import asynccontextmanager
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.openapi.docs import get_swagger_ui_html
 from fastapi.openapi.utils import get_openapi
 from fastapi.responses import JSONResponse
-from contextlib import asynccontextmanager
-import os
 
-from backend.core.config import settings
-from backend.api import chat, media, office, code, plugins
-from backend.core.database import engine, Base
 import backend.models  # noqa: F401 - Import models to register with Base.metadata
+from backend.api import chat, code, media, office, plugins
+from backend.core.config import settings
+from backend.core.database import Base, engine
 
 
 @asynccontextmanager

@@ -1,10 +1,10 @@
 """
 Model downloader for downloading models from HuggingFace
 """
-import uuid
 import asyncio
-from typing import Dict, Any, Optional
+import uuid
 from dataclasses import dataclass
+from typing import Any, Dict, Optional
 
 from backend.model_manager.registry import ModelRegistry
 

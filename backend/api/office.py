@@ -1,10 +1,11 @@
 """
 Office tools API endpoints
 """
-from fastapi import APIRouter, UploadFile, File, HTTPException, Depends
-from sqlalchemy.ext.asyncio import AsyncSession
+from typing import List, Optional
+
+from fastapi import APIRouter, Depends, File, HTTPException, UploadFile
 from pydantic import BaseModel
-from typing import Optional, List
+from sqlalchemy.ext.asyncio import AsyncSession
 
 from backend.core.database import get_db
 from backend.services.office_service import OfficeService

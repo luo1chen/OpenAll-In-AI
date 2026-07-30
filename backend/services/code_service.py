@@ -1,7 +1,7 @@
 """
 Code service for developer assistance
 """
-from typing import Dict, Any, Optional, List
+from typing import Any, Dict, List, Optional
 
 from sqlalchemy.ext.asyncio import AsyncSession
 

@@ -2,6 +2,7 @@
 Tests for plugin loader
 """
 import pytest
+
 from backend.plugins.loader import PluginLoader
 
 

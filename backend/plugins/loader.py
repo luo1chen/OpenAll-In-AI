@@ -1,10 +1,9 @@
 """
 Plugin loader for managing plugins
 """
-from pathlib import Path
-from typing import List, Dict, Any, Optional
 from dataclasses import dataclass
-
+from pathlib import Path
+from typing import Any, Dict, List, Optional
 
 
 @dataclass

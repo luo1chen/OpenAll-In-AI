@@ -2,6 +2,7 @@
 Tests for code service
 """
 import pytest
+
 from backend.services.code_service import CodeService
 
 

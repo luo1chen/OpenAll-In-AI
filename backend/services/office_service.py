@@ -2,7 +2,7 @@
 Office service for document processing
 """
 import uuid
-from typing import List, Dict, Any
+from typing import Any, Dict, List
 
 from sqlalchemy.ext.asyncio import AsyncSession
 
