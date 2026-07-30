@@ -4,8 +4,7 @@ Media processing API endpoints
 from fastapi import APIRouter, UploadFile, File, HTTPException, Depends
 from sqlalchemy.ext.asyncio import AsyncSession
 from pydantic import BaseModel
-from typing import Optional, List
-import uuid
+from typing import Optional
 
 from backend.core.database import get_db
 from backend.services.media_service import MediaService

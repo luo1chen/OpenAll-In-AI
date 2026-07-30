@@ -1,7 +1,6 @@
 """
 Code service for developer assistance
 """
-import uuid
 from typing import Dict, Any, Optional, List
 
 from sqlalchemy.ext.asyncio import AsyncSession

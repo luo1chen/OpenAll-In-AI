@@ -3,7 +3,6 @@ Tests for chat service
 """
 import pytest
 from backend.services.chat_service import ChatService
-from backend.models import ChatSession, ChatMessage
 
 
 @pytest.mark.asyncio

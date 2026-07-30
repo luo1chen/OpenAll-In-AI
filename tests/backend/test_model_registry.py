@@ -1,7 +1,6 @@
 """
 Tests for model registry
 """
-import pytest
 from backend.model_manager.registry import ModelRegistry
 
 

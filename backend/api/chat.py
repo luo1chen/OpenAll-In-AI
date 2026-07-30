@@ -6,7 +6,6 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from pydantic import BaseModel, Field
 from typing import Optional
 from datetime import datetime
-import uuid
 
 from backend.core.database import get_db
 from backend.services.chat_service import ChatService

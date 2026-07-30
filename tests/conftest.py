@@ -7,8 +7,7 @@ from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession, async_sess
 from sqlalchemy.pool import StaticPool
 
 from backend.core.database import Base
-from backend.models import ChatSession, ChatMessage, MediaTask, Plugin  # Import models
-from backend.main import app
+import backend.models  # noqa: F401 - Import models to register with Base.metadata
 
 
 @pytest.fixture(scope="session")

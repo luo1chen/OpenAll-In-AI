@@ -13,7 +13,7 @@ import os
 from backend.core.config import settings
 from backend.api import chat, media, office, code, plugins
 from backend.core.database import engine, Base
-from backend.models import ChatSession, ChatMessage, MediaTask, Plugin
+import backend.models  # noqa: F401 - Import models to register with Base.metadata
 
 
 @asynccontextmanager

@@ -1,7 +1,7 @@
 """
 Model inference engine
 """
-from typing import Optional, List, Dict, Any
+from typing import Optional, Dict, Any
 import httpx
 
 
@@ -39,7 +39,6 @@ class ModelInference:
     ) -> str:
         """Generate using local model"""
         # Placeholder - actual implementation would use llama.cpp
-        full_prompt = f"{system_prompt}\n\n{prompt}" if system_prompt else prompt
         return f"[Local Model {model}] Response to: {prompt[:50]}..."
 
     async def _api_generate(

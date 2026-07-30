@@ -3,11 +3,9 @@ Model downloader for downloading models from HuggingFace
 """
 import uuid
 import asyncio
-from pathlib import Path
 from typing import Dict, Any, Optional
 from dataclasses import dataclass
 
-from backend.core.config import settings
 from backend.model_manager.registry import ModelRegistry
 
 

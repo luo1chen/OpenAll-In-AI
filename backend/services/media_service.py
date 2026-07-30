@@ -2,10 +2,7 @@
 Media service for multimedia processing
 """
 import uuid
-import base64
-from datetime import datetime
 from typing import Optional, Dict, Any
-from io import BytesIO
 
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession

@@ -1,13 +1,10 @@
 """
 Plugin loader for managing plugins
 """
-import json
-import importlib
 from pathlib import Path
 from typing import List, Dict, Any, Optional
 from dataclasses import dataclass
 
-from backend.core.config import settings
 
 
 @dataclass

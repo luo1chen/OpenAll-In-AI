@@ -2,11 +2,9 @@
 Plugins API endpoints
 """
 from fastapi import APIRouter, HTTPException, Depends
-from sqlalchemy.ext.asyncio import AsyncSession
 from pydantic import BaseModel
 from typing import Optional, List
 
-from backend.core.database import get_db
 from backend.plugins.loader import PluginLoader
 
 router = APIRouter()
