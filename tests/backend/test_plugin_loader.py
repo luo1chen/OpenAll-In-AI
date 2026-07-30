@@ -98,5 +98,7 @@ def test_list_market_plugins():
     loader = PluginLoader()
     plugins = loader.list_market_plugins()
 
-    assert "plugins" in plugins
-    assert isinstance(plugins["plugins"], list)
+    assert isinstance(plugins, list)
+    assert len(plugins) >= 1
+    assert "id" in plugins[0]
+    assert "name" in plugins[0]

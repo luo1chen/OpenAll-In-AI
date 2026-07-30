@@ -1,0 +1,145 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  create-release:
+    name: Create Release
+    runs-on: ubuntu-latest
+    outputs:
+      upload_url: ${{ steps.create_release.outputs.upload_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Extract version
+        id: version
+        run: echo "version=${GITHUB_REF#refs/tags/v}" >> $GITHUB_OUTPUT
+
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: OpenAll-In-AI v${{ steps.version.outputs.version }}
+          draft: false
+          prerelease: false
+          body: |
+            ## 🎉 OpenAll-In-AI v${{ steps.version.outputs.version }} Released!
+
+            ### ✨ New Features
+            - AI Chat Engine with multi-model support
+            - AI Image Generation module
+            - Multimedia processing (OCR, speech-to-text)
+            - Office tools (PDF, Word, Excel AI)
+            - Code assistant with generation and debugging
+            - Plugin ecosystem with open SDK
+
+            ### 🚀 Quick Start
+            ```bash
+            git clone https://github.com/luo1chen/OpenAll-In-AI.git
+            cd OpenAll-In-AI
+            pip install -r requirements.txt
+            python main.py
+            ```
+
+            ### 📦 Docker
+            ```bash
+            docker run -p 8000:8000 luo1chen/openall-in-ai:latest
+            ```
+
+            ---
+            **Full Changelog**: https://github.com/luo1chen/OpenAll-In-AI/compare/v${{ steps.version.outputs.version }}...main
+
+  build-backend:
+    name: Build Backend (Python Wheel)
+    runs-on: ubuntu-latest
+    needs: create-release
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Build package
+        run: |
+          pip install build
+          python -m build
+
+      - name: Upload wheel to release
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ needs.create-release.outputs.upload_url }}
+          asset_path: dist/
+          asset_name: openall-in-ai-backend.tar.gz
+          asset_content_type: application/gzip
+
+  build-frontend:
+    name: Build Frontend
+    runs-on: ubuntu-latest
+    needs: create-release
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        working-directory: frontend
+        run: npm ci
+
+      - name: Build frontend
+        working-directory: frontend
+        run: npm run build
+
+      - name: Upload frontend to release
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ needs.create-release.outputs.upload_url }}
+          asset_path: frontend/dist
+          asset_name: openall-in-ai-frontend.zip
+          asset_content_type: application/zip
+
+  build-docker:
+    name: Build Docker Image
+    runs-on: ubuntu-latest
+    needs: create-release
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Log in to Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Extract metadata
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ghcr.io/${{ github.repository }}
+          tags: |
+            type=semver,pattern={{version}}
+            type=sha
+
+      - name: Build and push
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}

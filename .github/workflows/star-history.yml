@@ -1,0 +1,26 @@
+name: Star History Update
+
+on:
+  schedule:
+    # Run daily at midnight UTC
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+jobs:
+  update-star-history:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Update Star History Chart
+        uses: star-history/star-history-action@v1
+        with:
+          repo: luo1chen/OpenAll-In-AI
+          token: ${{ secrets.GITHUB_TOKEN }}
+          output-file: docs/star-history.svg
+          no-date-label: true
+          aggregate-by: day
+          # Keep the chart small
+          chart-height: 300
+          # Use a nice color
+          color-scheme: github
