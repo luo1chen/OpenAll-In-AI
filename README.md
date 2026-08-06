@@ -354,9 +354,6 @@ This project is licensed under the **MIT License** — see the [LICENSE](LICENSE
 
 **Made with ❤️ by the OpenAll-In-AI Community**
 
-[![Star History Chart](https://api.star-history.com/svg?repos=luo1chen/OpenAll-In-AI&type=Date)](https://star-history.com/#luo1chen/OpenAll-In-AI&Date)
-
-<!-- star-history:start -->
-<!-- star-history:end -->
+[![Star this repo ⭐](https://img.shields.io/badge/Star-this%20repo%20%E2%AD%90-yellow?style=for-the-badge)](https://github.com/luo1chen/OpenAll-In-AI)
 
 </div>
