@@ -1,0 +1,10 @@
+name: Star History Update
+
+on:
+  workflow_dispatch:
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Star history workflow disabled - using static badge instead"
