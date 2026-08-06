@@ -356,4 +356,7 @@ This project is licensed under the **MIT License** — see the [LICENSE](LICENSE
 
 [![Star History Chart](https://api.star-history.com/svg?repos=luo1chen/OpenAll-In-AI&type=Date)](https://star-history.com/#luo1chen/OpenAll-In-AI&Date)
 
+<!-- star-history:start -->
+<!-- star-history:end -->
+
 </div>
